@@ -1,0 +1,14 @@
+artifact_uri: file:C:/Users/oumis/lung-cancer-app/mlruns/184850501764791315/48b3d25841b942bfa14339fa9a771468/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '184850501764791315'
+lifecycle_stage: active
+run_id: 48b3d25841b942bfa14339fa9a771468
+run_name: silent-squid-602
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752095105168
+status: 1
+tags: []
+user_id: oumis

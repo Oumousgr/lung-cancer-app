@@ -1,0 +1,14 @@
+artifact_uri: file:C:/Users/oumis/lung-cancer-app/mlruns/184850501764791315/2a1a9d9da3a64fed97954e9e13cf9339/artifacts
+end_time: 1752095104870
+entry_point_name: ''
+experiment_id: '184850501764791315'
+lifecycle_stage: active
+run_id: 2a1a9d9da3a64fed97954e9e13cf9339
+run_name: inquisitive-dove-436
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752095077792
+status: 3
+tags: []
+user_id: oumis
