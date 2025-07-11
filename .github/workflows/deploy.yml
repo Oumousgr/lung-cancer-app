@@ -31,4 +31,4 @@ jobs:
 
       - name: Build & push Docker image (à adapter)
         run: |
-          echo "Ajoute ici la commande docker build && docker push"
+          echo "Construire et pousser l’image Docker ici"
