@@ -1,4 +1,4 @@
-name: test-and-check
+name: CD - Build & Push Docker
 
 on:
   push:
@@ -19,12 +19,16 @@ jobs:
 
       - name: Installation des dépendances backend
         run: |
-          pip install -r requirements.txt
+          pip install -r backend/requirements.txt
 
       - name: Installation de DVC et MLflow
         run: |
-          pip install dvc[azure] mlflow
+          pip install dvc[gs] mlflow
 
       - name: Récupération des données DVC
         run: |
           dvc pull
+
+      - name: Build & push Docker image (à adapter)
+        run: |
+          echo "Ajoute ici la commande docker build && docker push"

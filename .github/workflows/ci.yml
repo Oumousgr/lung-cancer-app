@@ -21,8 +21,7 @@ jobs:
 
       - name: Installation des dépendances backend
         run: |
-          cd backend
-          pip install -r requirements.txt
+          pip install -r backend/requirements.txt
 
       - name: Installation de DVC et MLflow
         run: |
@@ -30,10 +29,8 @@ jobs:
 
       - name: Récupération des données DVC
         run: |
-          cd backend
           dvc pull
 
       - name: Tests unitaires (à adapter si tu as des tests)
         run: |
-          cd backend
-          python -m unittest discover tests || echo "Pas encore de tests."
+          python -m unittest discover backend/tests || echo "Pas encore de tests"
