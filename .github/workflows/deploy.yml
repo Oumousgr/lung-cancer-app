@@ -1,0 +1,30 @@
+name: test-and-check
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v3
+
+      - name: Configuration de Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Installation des dépendances backend
+        run: |
+          pip install -r requirements.txt
+
+      - name: Installation de DVC et MLflow
+        run: |
+          pip install dvc[azure] mlflow
+
+      - name: Récupération des données DVC
+        run: |
+          dvc pull
