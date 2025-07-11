@@ -1,20 +1,23 @@
-name: Push from dev to staging
+name: Push to staging
 
 on:
   push:
     branches: [dev]
 
 jobs:
-  promote-to-staging:
+  push-to-staging:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Push to staging
+      - name: Set Git user
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "GitHub Action"
-          git checkout staging
-          git merge dev --no-edit
-          git push origin staging
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Push to staging branch
+        run: |
+          git checkout -b staging
+          git push origin HEAD:staging --force
