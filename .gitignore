@@ -6,10 +6,6 @@ __pycache__/
 *.py[cod]
 *.pyo
 
-# DVC
-*.dvc
-.dvc/
-.dvcignore
 
 # MLflow
 mlruns/
@@ -23,3 +19,5 @@ mlruns/
 # Fichiers système
 .DS_Store
 Thumbs.db
+
+!.dvc/
