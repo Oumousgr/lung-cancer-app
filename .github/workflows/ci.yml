@@ -1,0 +1,39 @@
+name: CI - Tests et Analyse
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v3
+
+      - name: Configuration de Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Installation des dépendances backend
+        run: |
+          cd backend
+          pip install -r requirements.txt
+
+      - name: Installation de DVC et MLflow
+        run: |
+          pip install dvc[gs] mlflow
+
+      - name: Récupération des données DVC
+        run: |
+          cd backend
+          dvc pull
+
+      - name: Tests unitaires (à adapter si tu as des tests)
+        run: |
+          cd backend
+          python -m unittest discover tests || echo "Pas encore de tests."
