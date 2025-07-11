@@ -1,0 +1,23 @@
+name: Push to staging
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  push-to-staging:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Push to staging branch
+        run: |
+          git checkout -b staging
+          git push origin HEAD:staging --force
